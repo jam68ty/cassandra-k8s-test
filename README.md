@@ -116,7 +116,7 @@ UN  172.20.0.2  74.11 KiB  16      71.5%             df400a86-9fbe-43a8-aaaa-f7b
 
 Docker Desktop也可查看
 
-![Untitled](Cassandra%200b832/Untitled.png)
+![image](https://user-images.githubusercontent.com/39323128/159405569-dd76543d-d9d8-45af-b6ee-6cb44c068a5d.png)
 
 1. 分別進到不同node對同一個資料庫做操作
     1. 進到cassandra-1建立keyspace
@@ -166,13 +166,14 @@ Docker Desktop也可查看
         
 2. 用GUI介面查看 (TablePlus: [https://tableplus.com/](https://tableplus.com/))
     1. 打開tableplus建立新的connection
-        
-        ![Untitled](Cassandra%200b832/Untitled%201.png)
+
+        ![image](https://user-images.githubusercontent.com/39323128/159405589-90e89244-1d45-47aa-8811-6fda6beaf678.png)
         
     2. 只需輸入上方紅框部分(User, Password預設都是`cassandra`)
         
-        ![Untitled](Cassandra%200b832/Untitled%202.png)
-        
+        ![image](https://user-images.githubusercontent.com/39323128/159405595-af517bb5-5821-47dd-b606-a9fca9b108d6.png)
+
     3. 連線完成後可看到剛剛新增的內容
         
-        ![Untitled](Cassandra%200b832/Untitled%203.png)
+        ![image](https://user-images.githubusercontent.com/39323128/159405662-fdf8eb5c-0670-4ced-bdc0-f3f34cf677b2.png)
+
