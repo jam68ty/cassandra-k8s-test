@@ -35,6 +35,7 @@ public class DockerController {
             logger.info("[cassandra] - Query success!");
             return new ResponseEntity<>(users, HttpStatus.OK);
         } catch (Exception e) {
+            System.out.println(e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

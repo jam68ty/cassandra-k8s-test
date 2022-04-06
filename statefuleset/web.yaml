@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cassandra-web # Deployment 物件的名稱，與應用名稱保持一致
+  labels:
+    app: cassandra-web # 應用名稱
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cassandra  #app 標籤名稱
+  template: # .spec.template 其實就是 pod 的定義
+    metadata:
+      name: cassandra
+      # 設定給 pod 的 label 資訊
+      labels:
+        app: cassandra
+    spec:
+      containers:
+        - name: cassandra-web
+          image: localhost:5000/cassandra_web:v2 #docker image name
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
