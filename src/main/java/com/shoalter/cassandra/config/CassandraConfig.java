@@ -1,17 +1,21 @@
 package com.shoalter.cassandra.config;
 
+import com.datastax.oss.driver.api.querybuilder.schema.CreateTable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
+import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.core.cql.keyspace.CreateKeyspaceSpecification;
+import org.springframework.data.cassandra.core.cql.keyspace.CreateTableSpecification;
 import org.springframework.data.cassandra.core.cql.keyspace.KeyspaceOption;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 @Configuration
-
+@EnableCassandraRepositories(basePackages = "com.shoalter.cassandra.dao")
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Value("${spring.data.cassandra.keyspace-name}")
@@ -46,5 +50,14 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         return Arrays.asList(specification);
     }
 
+    @Override
+    public SchemaAction getSchemaAction() {
+//        CreateTableSpecification table = CreateTableSpecification.createTable("users").ifNotExists().
+        return SchemaAction.CREATE_IF_NOT_EXISTS;
+    }
 
+    @Override
+    public String[] getEntityBasePackages() {
+        return new String[]{"com.shoalter.cassandra.entity"};
+    }
 }

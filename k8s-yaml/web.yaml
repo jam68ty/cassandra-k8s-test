@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: cassandra-web
-          image: localhost:5000/cassandra_web:v2 #docker image name
+          image: localhost:5000/cassandra_web:v4 #docker image name
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080
